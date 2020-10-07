@@ -8,7 +8,11 @@
   <ion-card *ngFor="let img of [1, 2, 3]" class="image-card" #card>
     <ion-slides class="image-slide" [options]="sliderZoomOpts" #zoomslides>
       <ion-slide>
-        <div class="swiper-zoom-container">
+        <div
+          class="swiper-zoom-container"
+          (touchstart)="touchStart(card)"
+          (touchend)="touchEnd(zoomslides, card)"
+        >
           <img src="assets/img/img{{img}}.png" />
         </div>
       </ion-slide>

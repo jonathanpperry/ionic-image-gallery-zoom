@@ -4,6 +4,16 @@
 
   img {
     padding-top: 20px;
-    paddding-bottom: 20px;
+    padding-bottom: 20px;
   }
+}
+
+.image-slide,
+.image-card {
+  overflow: visible;
+}
+
+.image-card {
+  z-index: 11;
+  overflow: visible;
 }
