@@ -1,10 +1,13 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title> Ionic Image Zoom </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <!-- Backdrop implementation -->
+  <div *ngIf="zoomActive" class="backdrop" [style.opacity]="zoomScale"></div>
+
   <ion-card *ngFor="let img of [1, 2, 3]" class="image-card" #card>
     <ion-slides class="image-slide" [options]="sliderZoomOpts" #zoomslides>
       <ion-slide>
